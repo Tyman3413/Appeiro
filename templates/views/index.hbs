@@ -1,0 +1,855 @@
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8' />
+        <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <title>Apeiro — Реставрация и продажа автомобилей</title>
+
+        <!-- Подключение CSS-файла -->
+        <link rel='stylesheet' href='css/style.css' />
+
+        <!-- Подключение js-скрипта Swiper -->
+        <link
+            rel='stylesheet'
+            href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'
+        />
+
+        <!-- Подключение Favicon -->
+        <link
+            rel='apple-touch-icon'
+            sizes='180x180'
+            href='favicon/apple-touch-icon.png'
+        />
+        <link
+            rel='icon'
+            type='image/png'
+            sizes='32x32'
+            href='favicon/favicon-32x32.png'
+        />
+        <link
+            rel='icon'
+            type='image/png'
+            sizes='16x16'
+            href='favicon/favicon-16x16.png'
+        />
+        <link rel='manifest' href='favicon/site.webmanifest' />
+    </head>
+    <body>
+        <!-- Начало шапки -->
+        <header class='header'>
+            <div id='menu-button' class='fa-solid fa-bars'></div>
+
+            <a href='#' class='logo'>Apeiro</a>
+
+            <nav class='navbar'>
+                <a href='#home'>Главная</a>
+                <a href='#vehicles'>Автомобили</a>
+                <a href='#services'>Сервис</a>
+                <a href='#featured'>Рекомендации</a>
+                <a href='#reviews'>Отзывы</a>
+                <a href='#contact'>Контакты</a>
+            </nav>
+
+            <div id='login-button'>
+                <button class='button'>Войти</button>
+                <i class='fa-solid fa-user'></i>
+            </div>
+        </header>
+        <!-- Конец шапки -->
+
+        <!-- Начало формы входа -->
+        <div class='login-form-container'>
+            <span class='fa-solid fa-xmark' id='close-login-form'></span>
+
+            <form action='' id='login-form'>
+                <h3>Вход пользователя</h3>
+
+                <input
+                    type='email'
+                    placeholder='email'
+                    class='box'
+                    id='login-email'
+                    onkeyup='emailValidationLogin()'
+                />
+                <span id='email-error'></span>
+                <input type='password' placeholder='Пароль' class='box' />
+
+                <p>
+                    Забыли пароль?
+                    <a href='#' class='remember-password'>Нажмите здесь</a>
+                </p>
+                <span id='message-password'></span>
+                <input type='submit' value='Войти' class='button' />
+                <p>Или войти с помощью</p>
+
+                <div class='buttons'>
+                    <a href='' class='button'>Google</a>
+                    <a href='' class='button'>Вконтакте</a>
+                </div>
+
+                <div class='registration-button' id='registration-button'>
+                    <p>Нет аккаунта? <a href='#'>Зарегистрироваться</a></p>
+                </div>
+            </form>
+        </div>
+        <!-- Конец формы входа -->
+
+        <!-- Начало формы регистрации -->
+        <div class='registration-form-container'>
+            <span class='fa-solid fa-xmark' id='close-registration-form'></span>
+
+            <form action='/register' method='POST'>
+                <h3>Регистрация пользователя</h3>
+
+                <input
+                    type='text'
+                    placeholder='Имя'
+                    class='box'
+                    name='firstname'
+                />
+                <input type='text' placeholder='Фамилия' class='box' />
+                <input type='email' placeholder='email' class='box' />
+                <input type='password' placeholder='Пароль' class='box' />
+                <input
+                    type='password'
+                    placeholder='Подтвердите пароль'
+                    class='box'
+                />
+
+                <input
+                    type='submit'
+                    value='Зарегистрироваться'
+                    class='button'
+                />
+                <p>Зарегистрироваться с помощью</p>
+
+                <div class='buttons'>
+                    <a href='' class='button'>Google</a>
+                    <a href='' class='button'>Вконтакте</a>
+                </div>
+
+                <div class='back-to-login' id='back-to-login'>
+                    <p>Уже есть аккаунт? <a href='#'>Войти</a></p>
+                </div>
+            </form>
+        </div>
+        <!-- Конец формы регистрации -->
+
+        <!-- Начало секции Главная -->
+        <section class='home' id='home'>
+            <h1 class='home-parallax' data-speed='-2'>
+                Купи автомобиль уже сегодня
+            </h1>
+            <img
+                class='home-parallax'
+                data-speed='5'
+                src='images/home-img.png'
+                alt=''
+            />
+            <a href='#vehicles' class='button home-parallax' data-speed='7'>
+                Найти автомобиль
+            </a>
+        </section>
+        <!-- Конец секции Главная -->
+
+        <!-- Начало секции Достижений -->
+        <section class='icons-container'>
+            <div class='icons'>
+                <i class='fa-solid fa-building'></i>
+                <div class='content'>
+                    <h3>15+</h3>
+                    <p>филлиалов</p>
+                </div>
+            </div>
+
+            <div class='icons'>
+                <i class='fa-solid fa-car'></i>
+                <div class='content'>
+                    <h3>500+</h3>
+                    <p>проданных автомобилей</p>
+                </div>
+            </div>
+
+            <div class='icons'>
+                <i class='fa-solid fa-face-smile'></i>
+                <div class='content'>
+                    <h3>240+</h3>
+                    <p>счастливых клиентов</p>
+                </div>
+            </div>
+
+            <div class='icons'>
+                <i class='fa-solid fa-car'></i>
+                <div class='content'>
+                    <h3>24+</h3>
+                    <p>новых автомобилей</p>
+                </div>
+            </div>
+        </section>
+        <!-- Конец секции Достижений -->
+
+        <!-- Начало секции Автомобилей -->
+        <section class='vehicles' id='vehicles'>
+            <h1 class='heading'>Популярные автомобили</h1>
+
+            <div class='swiper vehicles-slider'>
+                <div class='swiper-wrapper'>
+                    <div class='swiper-slide box'>
+                        <img src='images/vehicles/vehicle-1.png' alt='' />
+                        <div class='content'>
+                            <h3>Модель авто</h3>
+                            <div class='price'>
+                                <span>Цена: </span>1 500 000 ₽
+                            </div>
+                            <p>
+                                новая
+                                <span class='fa-solid fa-circle'></span>
+                                2021
+                                <span class='fa-solid fa-circle'></span>
+                                автомат
+                                <span class='fa-solid fa-circle'></span>
+                                бензин
+                                <span class='fa-solid fa-circle'></span>
+                                240 км/ч
+                            </p>
+                            <a href='#' class='button'>Узнать больше</a>
+                        </div>
+                    </div>
+
+                    <div class='swiper-slide box'>
+                        <img src='images/vehicles/vehicle-2.png' alt='' />
+                        <div class='content'>
+                            <h3>Модель авто</h3>
+                            <div class='price'>
+                                <span>Цена: </span>1 500 000 ₽
+                            </div>
+                            <p>
+                                новая
+                                <span class='fa-solid fa-circle'></span>
+                                2021
+                                <span class='fa-solid fa-circle'></span>
+                                автомат
+                                <span class='fa-solid fa-circle'></span>
+                                бензин
+                                <span class='fa-solid fa-circle'></span>
+                                240 км/ч
+                            </p>
+                            <a href='#' class='button'>Узнать больше</a>
+                        </div>
+                    </div>
+
+                    <div class='swiper-slide box'>
+                        <img src='images/vehicles/vehicle-3.png' alt='' />
+                        <div class='content'>
+                            <h3>Модель авто</h3>
+                            <div class='price'>
+                                <span>Цена: </span>1 500 000 ₽
+                            </div>
+                            <p>
+                                новая
+                                <span class='fa-solid fa-circle'></span>
+                                2021
+                                <span class='fa-solid fa-circle'></span>
+                                автомат
+                                <span class='fa-solid fa-circle'></span>
+                                бензин
+                                <span class='fa-solid fa-circle'></span>
+                                240 км/ч
+                            </p>
+                            <a href='#' class='button'>Узнать больше</a>
+                        </div>
+                    </div>
+
+                    <div class='swiper-slide box'>
+                        <img src='images/vehicles/vehicle-4.png' alt='' />
+                        <div class='content'>
+                            <h3>Модель авто</h3>
+                            <div class='price'>
+                                <span>Цена: </span>1 500 000 ₽
+                            </div>
+                            <p>
+                                новая
+                                <span class='fa-solid fa-circle'></span>
+                                2021
+                                <span class='fa-solid fa-circle'></span>
+                                автомат
+                                <span class='fa-solid fa-circle'></span>
+                                бензин
+                                <span class='fa-solid fa-circle'></span>
+                                240 км/ч
+                            </p>
+                            <a href='#' class='button'>Узнать больше</a>
+                        </div>
+                    </div>
+
+                    <div class='swiper-slide box'>
+                        <img src='images/vehicles/vehicle-5.png' alt='' />
+                        <div class='content'>
+                            <h3>Модель авто</h3>
+                            <div class='price'>
+                                <span>Цена: </span>1 500 000 ₽
+                            </div>
+                            <p>
+                                новая
+                                <span class='fa-solid fa-circle'></span>
+                                2021
+                                <span class='fa-solid fa-circle'></span>
+                                автомат
+                                <span class='fa-solid fa-circle'></span>
+                                бензин
+                                <span class='fa-solid fa-circle'></span>
+                                240 км/ч
+                            </p>
+                            <a href='#' class='button'>Узнать больше</a>
+                        </div>
+                    </div>
+
+                    <div class='swiper-slide box'>
+                        <img src='images//vehicles/vehicle-6.png' alt='' />
+                        <div class='content'>
+                            <h3>Модель авто</h3>
+                            <div class='price'>
+                                <span>Цена: </span>1 500 000 ₽
+                            </div>
+                            <p>
+                                новая
+                                <span class='fa-solid fa-circle'></span>
+                                2021
+                                <span class='fa-solid fa-circle'></span>
+                                автомат
+                                <span class='fa-solid fa-circle'></span>
+                                бензин
+                                <span class='fa-solid fa-circle'></span>
+                                240 км/ч
+                            </p>
+                            <a href='#' class='button'>Узнать больше</a>
+                        </div>
+                    </div>
+                </div>
+                <div class='swiper-pagination'></div>
+            </div>
+        </section>
+        <!-- Конец секции Автомобилей -->
+
+        <!-- Начало секции Сервис -->
+        <section class='services' id='services'>
+            <h1 class='heading'>Наши услуги</h1>
+
+            <div class='box-container'>
+                <div class='box'>
+                    <i class='fa-solid fa-car'></i>
+                    <h3>Продажа автомобилей</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Quaerat, quod.
+                    </p>
+                    <a href='#' class='button'>Узнать больше</a>
+                </div>
+
+                <div class='box'>
+                    <i class='fa-solid fa-gear'></i>
+                    <h3>Обслуживание автомобилей</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Quaerat, quod.
+                    </p>
+                    <a href='#' class='button'>Узнать больше</a>
+                </div>
+
+                <div class='box'>
+                    <i class='fa-solid fa-car-burst'></i>
+                    <h3>Страхование автомобилей</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Quaerat, quod.
+                    </p>
+                    <a href='#' class='button'>Узнать больше</a>
+                </div>
+
+                <div class='box'>
+                    <i class='fa-solid fa-spray-can-sparkles'></i>
+                    <h3>Детейлинг автомобилей</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Quaerat, quod.
+                    </p>
+                    <a href='#' class='button'>Узнать больше</a>
+                </div>
+
+                <div class='box'>
+                    <i class='fa-solid fa-oil-can'></i>
+                    <h3>Замена масла</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Quaerat, quod.
+                    </p>
+                    <a href='#' class='button'>Узнать больше</a>
+                </div>
+
+                <div class='box'>
+                    <i class='fa-solid fa-headset'></i>
+                    <h3>Поддержка 24/7</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Quaerat, quod.
+                    </p>
+                    <a href='#' class='button'>Узнать больше</a>
+                </div>
+            </div>
+        </section>
+        <!-- Конец секции Сервис -->
+
+        <!-- Начало секции Рекомендованные автомобили -->
+        <section class='featured' id='featured'>
+            <h1 class='heading'>Рекомендованные автомобили</h1>
+
+            <div class='swiper featured-slider'>
+                <div class='swiper-wrapper'>
+                    <div class='swiper-slide box'>
+                        <img src='images/featured/car-1.png' alt='' />
+                        <h3>Модель авто</h3>
+
+                        <div class='stars'>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star-half-stroke'></i>
+                        </div>
+                        <div class='price'>1 500 000 ₽</div>
+                        <a href='#' class='button'>Узнать больше</a>
+                    </div>
+
+                    <div class='swiper-slide box'>
+                        <img src='images/featured/car-2.png' alt='' />
+                        <h3>Модель авто</h3>
+
+                        <div class='stars'>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star-half-stroke'></i>
+                        </div>
+                        <div class='price'>1 500 000 ₽</div>
+                        <a href='#' class='button'>Узнать больше</a>
+                    </div>
+
+                    <div class='swiper-slide box'>
+                        <img src='images/featured/car-3.png' alt='' />
+                        <h3>Модель авто</h3>
+
+                        <div class='stars'>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star-half-stroke'></i>
+                        </div>
+                        <div class='price'>1 500 000 ₽</div>
+                        <a href='#' class='button'>Узнать больше</a>
+                    </div>
+
+                    <div class='swiper-slide box'>
+                        <img src='images/featured/car-4.png' alt='' />
+                        <h3>Модель авто</h3>
+
+                        <div class='stars'>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star-half-stroke'></i>
+                        </div>
+                        <div class='price'>1 500 000 ₽</div>
+                        <a href='#' class='button'>Узнать больше</a>
+                    </div>
+                </div>
+                <div class='swiper-pagination'></div>
+            </div>
+
+            <div class='swiper featured-slider'>
+                <div class='swiper-wrapper'>
+                    <div class='swiper-slide box'>
+                        <img src='images/featured/car-5.png' alt='' />
+                        <h3>Модель авто</h3>
+
+                        <div class='stars'>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star-half-stroke'></i>
+                        </div>
+                        <div class='price'>1 500 000 ₽</div>
+                        <a href='#' class='button'>Узнать больше</a>
+                    </div>
+
+                    <div class='swiper-slide box'>
+                        <img src='images/featured/car-6.png' alt='' />
+                        <h3>Модель авто</h3>
+
+                        <div class='stars'>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star-half-stroke'></i>
+                        </div>
+                        <div class='price'>1 500 000 ₽</div>
+                        <a href='#' class='button'>Узнать больше</a>
+                    </div>
+
+                    <div class='swiper-slide box'>
+                        <img src='images/featured/car-7.png' alt='' />
+                        <h3>Модель авто</h3>
+
+                        <div class='stars'>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star-half-stroke'></i>
+                        </div>
+                        <div class='price'>1 500 000 ₽</div>
+                        <a href='#' class='button'>Узнать больше</a>
+                    </div>
+
+                    <div class='swiper-slide box'>
+                        <img src='images/featured/car-8.png' alt='' />
+                        <h3>Модель авто</h3>
+
+                        <div class='stars'>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star-half-stroke'></i>
+                        </div>
+
+                        <div class='price'>1 500 000 ₽</div>
+                        <a href='#' class='button'>Узнать больше</a>
+                    </div>
+                </div>
+                <div class='swiper-pagination'></div>
+            </div>
+        </section>
+        <!-- Конец секции Рекомендованные автомобили -->
+
+        <!-- Начало секции Подписка на расслыку -->
+        <section class='newsletter'>
+            <h3>Подписка на последние поступления</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque,
+                doloremque!
+            </p>
+
+            <form action=''>
+                <input
+                    type='email'
+                    placeholder='Введите ваш email'
+                    name=''
+                    id=''
+                />
+                <input type='submit' class='subscribe' name='' id='' />
+            </form>
+        </section>
+        <!-- Конец секции Подписка на расслыку -->
+
+        <!-- Начало секции Отзывы -->
+        <section class='reviews' id='reviews'>
+            <h1 class='heading'>Отзывы клиентов</h1>
+
+            <div class='swiper reviews-slider'>
+                <div class='swiper-wrapper'>
+                    <div class='swiper-slide box'>
+                        <img src='images/clients/pic-1.png' alt='' />
+                        <div class='content'>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Et inventore est pariatur eius
+                                hic, aperiam unde. Omnis recusandae totam a.
+                            </p>
+
+                            <h3>Фамилия Имя</h3>
+
+                            <div class='stars'>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star-half-stroke'></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='swiper-slide box'>
+                        <img src='images/clients/pic-2.png' alt='' />
+                        <div class='content'>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Et inventore est pariatur eius
+                                hic, aperiam unde. Omnis recusandae totam a.
+                            </p>
+
+                            <h3>Фамилия Имя</h3>
+
+                            <div class='stars'>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star-half-stroke'></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='swiper-slide box'>
+                        <img src='images/clients/pic-3.png' alt='' />
+                        <div class='content'>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Et inventore est pariatur eius
+                                hic, aperiam unde. Omnis recusandae totam a.
+                            </p>
+
+                            <h3>Фамилия Имя</h3>
+
+                            <div class='stars'>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star-half-stroke'></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='swiper-slide box'>
+                        <img src='images/clients/pic-4.png' alt='' />
+                        <div class='content'>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Et inventore est pariatur eius
+                                hic, aperiam unde. Omnis recusandae totam a.
+                            </p>
+
+                            <h3>Фамилия Имя</h3>
+
+                            <div class='stars'>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star-half-stroke'></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='swiper-slide box'>
+                        <img src='images/clients/pic-5.png' alt='' />
+                        <div class='content'>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Et inventore est pariatur eius
+                                hic, aperiam unde. Omnis recusandae totam a.
+                            </p>
+
+                            <h3>Фамилия Имя</h3>
+
+                            <div class='stars'>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star-half-stroke'></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='swiper-slide box'>
+                        <img src='images/clients/pic-6.png' alt='' />
+                        <div class='content'>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Et inventore est pariatur eius
+                                hic, aperiam unde. Omnis recusandae totam a.
+                            </p>
+
+                            <h3>Фамилия Имя</h3>
+
+                            <div class='stars'>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star-half-stroke'></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='swiper-pagination'></div>
+            </div>
+        </section>
+        <!-- Конец секции Отзывы -->
+
+        <!-- Начало секции Контакты -->
+        <section class='contact' id='contact'>
+            <h1 class='heading'>Связь с нами</h1>
+
+            <div class='row'>
+                <iframe
+                    src='https://yandex.ru/map-widget/v1/-/CCUbmDeFxC'
+                    width='560'
+                    height='400'
+                    frameborder='1'
+                    allowfullscreen='true'
+                    style='position: relative'
+                ></iframe>
+
+                <form action=''>
+                    <h3>Поддержка</h3>
+                    <input type='text' placeholder='Ваше имя' class='box' />
+                    <input type='email' placeholder='Ваш email' class='box' />
+                    <input type='text' placeholder='Тема' class='box' />
+                    <textarea
+                        placeholder='Ваше обращение'
+                        class='box'
+                        cols='30'
+                        rows='10'
+                    ></textarea>
+                    <input
+                        type='submit'
+                        value='Отправить сообщение'
+                        class='button'
+                    />
+                </form>
+            </div>
+        </section>
+        <!-- Конец секции Контакты -->
+
+        <!-- Начало секции футера -->
+        <section class='footer'>
+            <div class='box-container'>
+                <div class='box'>
+                    <h3>Наши офисы</h3>
+                    <a
+                        href='https://yandex.ru/maps/-/CCUbmSHWdA'
+                        target='_blank'
+                    ><i class='fa-solid fa-location-dot'></i>Симферополь</a>
+                    <a
+                        href='https://yandex.ru/maps/-/CCUbm-v5dC'
+                        target='_blank'
+                    ><i class='fa-solid fa-location-dot'></i>Севастополь</a>
+                    <a
+                        href='https://yandex.ru/maps/-/CCUbm-CFsA'
+                        target='_blank'
+                    ><i class='fa-solid fa-location-dot'></i>Феодосия</a>
+                    <a
+                        href='https://yandex.ru/maps/-/CCUbm-GZ~C'
+                        target='_blank'
+                    ><i class='fa-solid fa-location-dot'></i>Джанкой</a>
+                    <a
+                        href='https://yandex.ru/maps/-/CCUbm-SXWC'
+                        target='_blank'
+                    ><i class='fa-solid fa-location-dot'></i>Ялта</a>
+                    <a
+                        href='https://yandex.ru/maps/-/CCUbm-W1KD'
+                        target='_blank'
+                    ><i class='fa-solid fa-location-dot'></i>Керчь</a>
+                </div>
+
+                <div class='box'>
+                    <h3>Навигация</h3>
+                    <a href='#home'><i
+                            class='fa-solid fa-chevron-right'
+                        ></i>Главная</a>
+                    <a href='#vehicles'><i
+                            class='fa-solid fa-chevron-right'
+                        ></i>Автомобили</a>
+                    <a href='#services'><i
+                            class='fa-solid fa-chevron-right'
+                        ></i>Сервис</a>
+                    <a href='#featured'><i
+                            class='fa-solid fa-chevron-right'
+                        ></i>Рекомендации</a>
+                    <a href='#reviews'><i
+                            class='fa-solid fa-chevron-right'
+                        ></i>Отзывы</a>
+                    <a href='#contact'><i
+                            class='fa-solid fa-chevron-right'
+                        ></i>Контакты</a>
+                </div>
+
+                <div class='box'>
+                    <h3>Дополнительная информация</h3>
+                    <a><i class='fa-solid fa-phone'></i>+7 978 882-81-53</a>
+                    <a><i class='fa-solid fa-phone'></i>+7 978 503-04-33</a>
+                    <a><i
+                            class='fa-solid fa-envelope'
+                        ></i>tyman3413@gmail.com</a>
+                    <a
+                        href='https://yandex.ru/maps/-/CCUbm-d02B'
+                        target='_blank'
+                    ><i class='fa-solid fa-location-dot'></i>Россия, Республика
+                        Крым, г. Симферополь</a>
+                    <a><i class='fa-solid fa-clock'></i>с 09:00 до 18:00</a>
+                    <a href='https://kipu-rc.ru/' target='_blank'><i
+                            class='fa-solid fa-heart'
+                        ></i>КИПУ им. Февзи Якубова</a>
+                </div>
+
+                <div class='box'>
+                    <h3>Социальные сети</h3>
+                    <a href='https://t.me/Tyman3413' target='_blank'><i
+                            class='fa-brands fa-telegram'
+                        ></i>Telegram</a>
+                    <a
+                        href='https://discordapp.com/users/760724311169433650'
+                        target='_blank'
+                    ><i class='fa-brands fa-discord'></i>Discord</a>
+                    <a href='https://vk.com/tyman3413' target='_blank'><i
+                            class='fa-brands fa-vk'
+                        ></i>Вконтакте</a>
+                    <a
+                        href='https://instagram.com/tyman3413?igshid=YmMyMTA2M2Y='
+                        target='_blank'
+                    ><i class='fa-brands fa-instagram'></i>Instagram</a>
+                    <a href='https://github.com/Tyman3413' target='_blank'><i
+                            class='fa-brands fa-github'
+                        ></i>GitHub</a>
+                    <a
+                        href='https://www.youtube.com/channel/UClvcf3INcxAg1z4kT-87jwA'
+                        target='_blank'
+                    ><i class='fa-brands fa-youtube'></i>Youtube</a>
+                </div>
+            </div>
+
+            <div class='credit'>
+                Создано в рамках учебной дисциплины студентом КИПУ им. Февзи
+                Якубова в 2022 году
+            </div>
+        </section>
+        <!-- Конец секции футера -->
+
+        <script>
+
+        </script>
+
+        <!-- Подключение Font Awesome -->
+        <script
+            src='https://kit.fontawesome.com/01e7be4b4a.js'
+            crossorigin='anonymous'
+        ></script>
+
+        <!-- Подключение js-скрипта Swiper -->
+        <script
+            src='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js'
+        ></script>
+
+        <!-- Подключение JS-файлов -->
+        <script src='js/script.js'></script>
+        <script src='js/validation.js'></script>
+    </body>
+</html>
