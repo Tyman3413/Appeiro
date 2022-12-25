@@ -61,18 +61,24 @@
         <div class='login-form-container'>
             <span class='fa-solid fa-xmark' id='close-login-form'></span>
 
-            <form action='' id='login-form'>
+            <form action='/main' id='login-form' method='POST'>
                 <h3>Вход пользователя</h3>
 
                 <input
                     type='email'
                     placeholder='email'
                     class='box'
+                    name='login_email'
                     id='login-email'
                     onkeyup='emailValidationLogin()'
                 />
                 <span id='email-error'></span>
-                <input type='password' placeholder='Пароль' class='box' />
+                <input
+                    type='password'
+                    placeholder='Пароль'
+                    class='box'
+                    name='login_password'
+                />
 
                 <p>
                     Забыли пароль?
@@ -98,7 +104,7 @@
         <div class='registration-form-container'>
             <span class='fa-solid fa-xmark' id='close-registration-form'></span>
 
-            <form action='/register' method='POST'>
+            <form action='/main' method='POST'>
                 <h3>Регистрация пользователя</h3>
 
                 <input
@@ -107,13 +113,29 @@
                     class='box'
                     name='firstname'
                 />
-                <input type='text' placeholder='Фамилия' class='box' />
-                <input type='email' placeholder='email' class='box' />
-                <input type='password' placeholder='Пароль' class='box' />
+                <input
+                    type='text'
+                    placeholder='Фамилия'
+                    class='box'
+                    name='lastname'
+                />
+                <input
+                    type='email'
+                    placeholder='email'
+                    class='box'
+                    name='registration_email'
+                />
+                <input
+                    type='password'
+                    placeholder='Пароль'
+                    class='box'
+                    name='registration_password'
+                />
                 <input
                     type='password'
                     placeholder='Подтвердите пароль'
                     class='box'
+                    name='registration_confirmPassword'
                 />
 
                 <input
