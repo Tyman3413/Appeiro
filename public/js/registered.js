@@ -9,34 +9,34 @@ menu.onclick = () => {
 };
 
 // Скрипты для формы входа в систему
-document.querySelector('#login-button').onclick = () => {
-    document.querySelector('.login-form-container').classList.toggle('active');
-};
+// document.querySelector('#login-button').onclick = () => {
+//     document.querySelector('.login-form-container').classList.toggle('active');
+// };
 
-document.querySelector('#close-login-form').onclick = () => {
-    document.querySelector('.login-form-container').classList.remove('active');
-};
+// document.querySelector('#close-login-form').onclick = () => {
+//     document.querySelector('.login-form-container').classList.remove('active');
+// };
 
 // Скрипты для формы регистрации в системе
-document.querySelector('#registration-button').onclick = () => {
-    document.querySelector('.login-form-container').classList.remove('active');
-    document
-        .querySelector('.registration-form-container')
-        .classList.toggle('active');
-};
+// document.querySelector('#registration-button').onclick = () => {
+//     document.querySelector('.login-form-container').classList.remove('active');
+//     document
+//         .querySelector('.registration-form-container')
+//         .classList.toggle('active');
+// };
 
-document.querySelector('#close-registration-form').onclick = () => {
-    document
-        .querySelector('.registration-form-container')
-        .classList.remove('active');
-};
+// document.querySelector('#close-registration-form').onclick = () => {
+//     document
+//         .querySelector('.registration-form-container')
+//         .classList.remove('active');
+// };
 
-document.querySelector('#back-to-login').onclick = () => {
-    document
-        .querySelector('.registration-form-container')
-        .classList.remove('active');
-    document.querySelector('.login-form-container').classList.toggle('active');
-};
+// document.querySelector('#back-to-login').onclick = () => {
+//     document
+//         .querySelector('.registration-form-container')
+//         .classList.remove('active');
+//     document.querySelector('.login-form-container').classList.toggle('active');
+// };
 
 window.onscroll = () => {
     if (window.scrollY > 0) {

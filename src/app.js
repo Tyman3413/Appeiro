@@ -37,24 +37,52 @@ app.get('/car1', (req, res) => {
     res.render('car1');
 });
 
+app.get('/regcar1', (req, res) => {
+    res.render('regcar1');
+});
+
 app.get('/car2', (req, res) => {
     res.render('car2');
+});
+
+app.get('/regcar2', (req, res) => {
+    res.render('regcar2');
 });
 
 app.get('/car3', (req, res) => {
     res.render('car3');
 });
 
+app.get('/regcar3', (req, res) => {
+    res.render('regcar3');
+});
+
 app.get('/car4', (req, res) => {
     res.render('car4');
+});
+
+app.get('/regcar4', (req, res) => {
+    res.render('regcar4');
 });
 
 app.get('/car5', (req, res) => {
     res.render('car5');
 });
 
+app.get('/regcar5', (req, res) => {
+    res.render('regcar5');
+});
+
 app.get('/car6', (req, res) => {
     res.render('car6');
+});
+
+app.get('/regcar6', (req, res) => {
+    res.render('regcar6');
+});
+
+app.get('/about', (req, res) => {
+    res.render('about');
 });
 
 app.post('/main', async (req, res) => {

@@ -895,6 +895,76 @@ section {
 
 /* Конец секции Объявление */
 
+/* Начало страницы О нас */
+.about-section {
+    width: 100%;
+    padding: 78px 0;
+    background-color: var(--background);
+}
+
+.about-div {
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about-section img {
+    height: auto;
+    width: 420px;
+}
+
+.about-text {
+    width: 550px;
+}
+
+.about-text h1 {
+    color: #fff;
+    font-size: 80px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.about-text h5 {
+    color: #fff;
+    font-size: 25px;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.about-text h5 span {
+    color: var(--light-blue);
+}
+
+.about-text p {
+    color: var(--light-color);
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+
+.about-text button {
+    background: var(--light-blue);
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: 0.4s;
+}
+
+.about-text button:hover {
+    background: transparent;
+    border: 2px solid var(--light-blue);
+    cursor: pointer;
+}
+/* Конец страницы О нас */
+
 /* ===================================================================================================================================== */
 
 /* Начало Swiper */
