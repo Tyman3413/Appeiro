@@ -53,7 +53,7 @@
 }
 
 body {
-    height: 300rem;
+    /* height: 300rem; */
     background: var(--background);
 }
 
@@ -757,207 +757,143 @@ section {
 
 /* ===================================================================================================================================== */
 
-.card-wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
+/* Начало секции Объявление */
+
+.car-ad {
+    background: var(--background);
 }
 
-img {
+.container {
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-car {
+    background: var(--background);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 1px rgb(0, 0, 0, 12%);
+    padding: 45px;
+    margin-top: 100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 'images info' 'images description';
+    grid-gap: 35px;
+}
+
+.box-car .images {
+    grid-area: images;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 'active active active' 'idle idle idle';
+    grid-gap: 5px;
+}
+
+.box-car .images .img-holder img {
     width: 100%;
     display: block;
+    border-radius: 10px;
+    background: var(--light-color);
 }
 
-.img-display {
-    overflow: hidden;
+.box-car .images .img-holder.active {
+    grid-area: active;
 }
 
-.img-showcase {
-    display: flex;
-    width: 100%;
-    transition: all 0.5s ease;
-}
-
-.img-showcase img {
-    min-width: 100%;
-}
-
-.img-select {
-    display: flex;
-}
-
-.img-item {
-    margin: 0.3rem;
-}
-
-.img-item:nth-child(1),
-.img-item:nth-child(2),
-.img-item:nth-child(3) {
-    margin-right: 0;
-}
-
-.img-item:hover {
-    opacity: 0.8;
-}
-
-.product-content {
-    padding: 2rem 1rem;
-}
-
-.product-title {
-    font-size: 3rem;
-    text-transform: capitalize;
-    font-weight: 700;
-    position: relative;
-    color: #000;
-    margin: 1rem 0;
-}
-
-.product-title::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 4px;
-    width: 80px;
-    background: #12263a;
-}
-
-.product-link {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 0.9rem;
-    display: inline-block;
-    margin-bottom: 0.5rem;
-    background: #256eff;
-    color: #fff;
-    padding: 0 0.3rem;
-    transition: all 0.5s ease;
-}
-
-.product-link:hover {
-    opacity: 0.9;
-}
-
-.product-rating {
-    color: #ffc107;
-}
-
-.product-rating span {
-    font-weight: 600;
-    color: #252525;
-}
-
-.product-price {
-    margin: 1rem 0;
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.product-price span {
-    font-weight: 400;
-}
-
-.last-price span {
-    color: #f64749;
-    text-decoration: line-through;
-}
-
-.new-price span {
-    color: #256eff;
-}
-
-.product-detail h2 {
-    text-transform: capitalize;
-    color: #12263a;
-    padding-bottom: 0.6rem;
-}
-
-.product-detail p {
-    font-size: 0.9rem;
-    padding: 0.3rem;
-    opacity: 0.8;
-}
-
-.product-detail ul {
-    margin: 1rem 0;
-    font-size: 0.9rem;
-}
-
-.product-detail ul li {
-    margin: 0;
-    list-style: none;
-    padding-left: 1.7rem;
-    margin: 0.4rem 0;
-    font-weight: 600;
-    opacity: 0.9;
-}
-
-.product-detail ul li span {
-    font-weight: 400;
-}
-
-.purchase-info {
-    margin: 1.5rem 0;
-}
-
-.purchase-info input,
-.purchase-info .btn {
-    border: 1.5px solid #ddd;
-    border-radius: 25px;
-    text-align: center;
-    padding: 0.45rem 0.8rem;
-    outline: 0;
-    margin-right: 0.2rem;
-    margin-bottom: 1rem;
-}
-
-.purchase-info input {
-    width: 60px;
-}
-
-.purchase-info .btn {
+.box-car .images .img-holder:not(.active):hover {
+    opacity: 0.95;
     cursor: pointer;
+}
+
+.box-car .basic-info {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.box-car .basic-info h1 {
     color: #fff;
+    font-size: 45px;
 }
 
-.purchase-info .btn:first-of-type {
-    background: #256eff;
+.box-car .basic-info .rate {
+    color: yellow;
+    font-size: 15px;
 }
 
-.purchase-info .btn:last-of-type {
-    background: #f64749;
+.box-car .basic-info span {
+    color: #fff;
+    font-weight: 800;
+    font-size: 25px;
 }
 
-.purchase-info .btn:hover {
-    opacity: 0.9;
-}
-
-.social-links {
-    display: flex;
-    align-items: center;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    color: #000;
-    border: 1px solid #000;
-    margin: 0 0.2rem;
-    border-radius: 50%;
+.box-car .basic-info .options a {
+    color: white;
+    background-color: var(--light-blue);
+    display: inline-block;
+    padding: 10px 15px;
     text-decoration: none;
-    font-size: 0.8rem;
-    transition: all 0.5s ease;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 5px;
 }
 
-.social-links a:hover {
-    background: #000;
-    border-color: transparent;
+.box-car .basic-info .options a:hover {
+    background-color: var(--blue);
+}
+
+.box-car .description {
+    grid-area: description;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.box-car .description p {
+    color: var(--light-color);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.box-car .description .features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.box-car .description .features i {
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.box-car .description .features .fa-circle-check {
+    color: var(--light-blue);
+}
+
+.box-car .description .social {
+    list-style: none;
+    display: flex;
+}
+
+.box-car .description .social a {
+    margin-right: 15px;
+    font-size: 50px;
+    color: var(--light-color);
+}
+
+.box-car .description .social a:hover {
     color: #fff;
 }
+
+/* Конец секции Объявление */
 
 /* ===================================================================================================================================== */
 

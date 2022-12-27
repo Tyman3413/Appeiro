@@ -29,8 +29,32 @@ app.get('/main', (req, res) => {
     res.render('index');
 });
 
-app.get('/test', (req, res) => {
-    res.render('test');
+app.get('/profile', (req, res) => {
+    res.render('registered');
+});
+
+app.get('/car1', (req, res) => {
+    res.render('car1');
+});
+
+app.get('/car2', (req, res) => {
+    res.render('car2');
+});
+
+app.get('/car3', (req, res) => {
+    res.render('car3');
+});
+
+app.get('/car4', (req, res) => {
+    res.render('car4');
+});
+
+app.get('/car5', (req, res) => {
+    res.render('car5');
+});
+
+app.get('/car6', (req, res) => {
+    res.render('car6');
 });
 
 app.post('/main', async (req, res) => {
@@ -64,7 +88,7 @@ app.post('/main', async (req, res) => {
             });
 
             const registeredUser = await registerUser.save();
-            res.status(201).render('test');
+            res.status(201).render('registered');
         }
     } catch (error) {
         console.log(error);
@@ -80,7 +104,7 @@ app.post('/main', async (req, res) => {
             );
 
             if (login_password_match === true) {
-                res.status(201).render('test');
+                res.status(201).render('registered');
             } else {
                 res.send('Пароль неверный');
             }
