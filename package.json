@@ -2,8 +2,8 @@
     "name": "apeiro-new",
     "version": "1.0.0",
     "description": "Restoration and Selling cars Website",
-    "main": "index.js",
     "scripts": {
+        "start": "node src/app.js",
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "nodemon src/app.js -e js,hbs"
     },
